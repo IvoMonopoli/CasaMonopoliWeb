@@ -1,0 +1,43 @@
+.floating-whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366; /* color WhatsApp */
+  box-shadow: 0 14px 40px rgba(6,50,26,0.20);
+  z-index: 1400;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease;
+  will-change: transform, box-shadow;
+}
+
+/* Icono SVG de la librería */
+.fw-icon {
+  color: #fff;
+  width: 42px;
+  height: 42px;
+}
+
+/* Hover: solo scale */
+.floating-whatsapp:hover,
+.floating-whatsapp:focus {
+  transform: scale(1.12);
+  outline: none;
+}
+
+/* Active (touch feedback) */
+.floating-whatsapp:active {
+  transform: scale(0.98);
+}
+
+/* Ajustes móviles */
+@media (max-width: 420px) {
+  .floating-whatsapp { width: 64px; height: 64px; right: 0.75rem; bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px)); }
+  .fw-icon { width: 36px; height: 36px; }
+}

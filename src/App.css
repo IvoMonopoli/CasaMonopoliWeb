@@ -1,0 +1,122 @@
+/* src/components/Navbar.css */
+
+/* Variables */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #000000;
+  --container: 1120px;
+  --height: 64px;
+  --divider: rgba(15,23,42,0.06);
+}
+
+/* Root */
+.nav-root {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* Inner container */
+.nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand / logo placeholder */
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+.nav-logo {
+  display: block;
+  width: 140px;
+  height: 40px;
+  background: linear-gradient(90deg,#fff,#f8fafc);
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  text-indent: -9999px;
+}
+
+/* Desktop links (hidden on small screens) */
+.nav-links-desktop {
+  display: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--text);
+  background: rgba(0,0,0,0.02);
+  outline: none;
+}
+
+/* Actions (toggle) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+.nav-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+.nav-toggle:focus {
+  outline: 2px solid rgba(0,0,0,0.08);
+}
+
+/* Mobile menu (hidden by default) */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem 1rem;
+  border-top: 1px solid var(--divider);
+  background: var(--bg);
+}
+.nav-mobile-link {
+  padding: 0.6rem 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 6px;
+}
+.nav-mobile-link:hover,
+.nav-mobile-link:focus {
+  background: rgba(0,0,0,0.03);
+  outline: none;
+}
+
+/* When open on mobile */
+.nav-mobile--open {
+  display: flex;
+}
+
+/* Responsive: show desktop links at >=768px */
+@media (min-width: 768px) {
+  .nav-links-desktop { display: flex; }
+  .nav-toggle { display: none; }
+  .nav-mobile { display: none !important; }
+  .nav-logo { width: 180px; height: 48px; }
+}

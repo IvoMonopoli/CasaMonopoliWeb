@@ -1,0 +1,27 @@
+/* Styles.css - base limpio */
+
+/* Fondo base del sitio */
+:root { --bg: #0b2f1f; }
+
+html, body, #root, .app-root {
+  background: linear-gradient(180deg, var(--bg), #062616);
+  background-color: var(--bg);
+}
+
+/* Evitar overflow horizontal por imágenes */
+img, picture, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Main sin margen de sidebar */
+main, .page-content, .content {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Asegurar que ningún contenedor fuerce scroll interno */
+#root, .app-root, main {
+  overflow: visible;
+}

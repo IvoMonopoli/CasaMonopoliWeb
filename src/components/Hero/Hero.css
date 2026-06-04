@@ -1,0 +1,181 @@
+/* src/components/Hero/Hero.css
+   Hero corregido para evitar overflow y scroll horizontal no deseado.
+*/
+
+/* Import Work Sans (mejor en index.html, pero funciona aquí) */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --hero-min-height-desktop: 70vh;
+  --hero-min-height-mobile: 60vh;
+}
+
+/* Asegurar que el hero no provoque overflow horizontal */
+.hero {
+  position: relative;
+  width: 100%;            /* evitar 100vw que incluye la barra de scroll */
+  margin: 0;              /* quitar márgenes negativos que causan overflow */
+  min-height: var(--hero-min-height-desktop);
+  overflow: hidden;       /* recortar cualquier exceso */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* imagen de fondo: cubrir todo el contenedor sin forzar ancho extra */
+.hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* img: cubrir el contenedor sin provocar overflow horizontal */
+.hero-img-wrap img.hero-fullimg {
+  position: absolute;
+  top: 0;
+  left: 0;                /* mantener dentro del contenedor */
+  width: 100%;            /* no usar 100vw */
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  max-width: none;
+}
+
+/* contenido encima de la imagen */
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1120px;
+  padding: 2rem;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Títulos y subtítulos */
+.hero-title {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  letter-spacing: -0.02em;
+  font-family: inherit;
+}
+
+.hero-sub {
+  margin: 0;
+  font-weight: 400;
+  color: rgba(255,255,255,0.95);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-family: inherit;
+}
+
+/* CTA container */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 6px 18px rgba(11,127,82,0.12);
+  min-width: 140px;
+  font-family: inherit;
+}
+
+/* Llamada primaria */
+.btn-call {
+  background: #636B63 !important;
+  color: white !important;
+  border: 0;
+}
+
+.btn-call:hover,
+.btn-call:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(11,127,82,0.18);
+  outline: none;
+}
+
+/* WhatsApp (verde claro) */
+.btn-whatsapp {
+  background: #25D366;
+  color: white !important;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* icono dentro del botón */
+.icon-whatsapp {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.45rem;
+  color: currentColor;
+}
+
+/* texto del botón */
+.btn .btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* hover / focus WhatsApp */
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(37,211,102,0.18);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero { min-height: var(--hero-min-height-desktop); }
+  .hero-img-wrap img.hero-fullimg { object-position: 70% 45%; }
+  .hero .hero-content { padding: 1.5rem; }
+  .btn { min-width: 130px; padding: 0.75rem 1rem; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: var(--hero-min-height-mobile); }
+  .hero-img-wrap img.hero-fullimg { object-position: 55% 50%; }
+  .hero .hero-content { padding: 1rem; gap: 0.75rem; }
+  .hero-title { font-size: clamp(1.6rem, 6.5vw, 2.2rem); }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-cta { gap: 0.6rem; }
+  .btn { min-width: 120px; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.95rem; }
+}
+
+/* accesibilidad: reducir motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .hero-title, .hero-sub { transition: none !important; }
+}
