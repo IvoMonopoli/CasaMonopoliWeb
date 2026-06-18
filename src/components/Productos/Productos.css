@@ -23,10 +23,14 @@
   color: #0a9d58;
 }
 
+/* --- CAMBIO 1: de grid a flex --- */
 .productos-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* esto es lo que centra la última fila */
   gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .producto-card {
@@ -39,7 +43,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 260px; 
+  min-height: 260px;
+  /* --- CAMBIO 2: ancho fijo para que flex pueda centrar --- */
+  width: 180px;
+  flex: 0 0 180px;
 }
 
 .producto-card:hover {
@@ -71,26 +78,37 @@
   line-height: 1.3;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .productos-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+/* --- ACCESORIOS --- */
+.accesorios-header {
+  margin-top: 4rem;
 }
 
+.accesorios-empty {
+  width: 100%;
+  text-align: center;
+  color: #5a6b64;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  padding: 2rem 0;
+  opacity: 0.8;
+}
+
+/* Responsive - CAMBIO 3 y 4 */
 @media (max-width: 700px) {
   .productos-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
   .producto-card {
     padding: 1.25rem 0.75rem;
     min-height: 200px;
+    width: 150px;
+    flex: 0 0 150px;
   }
 }
 
 @media (max-width: 420px) {
-  .productos-grid {
-    grid-template-columns: 1fr;
+  .producto-card {
+    width: 140px;
+    flex: 0 0 140px;
   }
 }

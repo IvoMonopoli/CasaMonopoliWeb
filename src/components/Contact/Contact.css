@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
 
+/* Evita scroll horizontal en mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .contact-section {
   background: #ffffff;
   padding: 5rem 1.5rem;
   font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .contact-inner {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .contact-title {
@@ -23,6 +36,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
+  width: 100%;
 }
 
 .contact-card {
@@ -35,6 +49,8 @@
   box-shadow: 0 10px 28px rgba(0,0,0,0.05);
   transition: transform .15s ease, box-shadow .15s ease;
   min-height: 140px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .contact-card:hover {
@@ -55,6 +71,11 @@
   flex-shrink: 0;
 }
 
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .card-body h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.45rem;
@@ -68,11 +89,14 @@
   font-weight: 600;
   font-size: 1.15rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .card-body a {
   color: #5a6b64;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .card-body a:hover {
@@ -91,5 +115,28 @@
   .contact-card {
     padding: 1.75rem;
     min-height: auto;
+  }
+}
+
+/* Mobile chico */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+  .contact-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+  }
+  .card-body h3 {
+    font-size: 1.25rem;
+  }
+  .card-body p {
+    font-size: 1rem;
   }
 }

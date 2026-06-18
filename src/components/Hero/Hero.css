@@ -2,21 +2,19 @@
    Hero corregido para evitar overflow y scroll horizontal no deseado.
 */
 
-/* Import Work Sans (mejor en index.html, pero funciona aquí) */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800&display=swap');
 
 :root {
   --hero-min-height-desktop: 70vh;
-  --hero-min-height-mobile: 60vh;
+  --hero-min-height-mobile: 78vh;
 }
 
-/* Asegurar que el hero no provoque overflow horizontal */
 .hero {
   position: relative;
-  width: 100%;            /* evitar 100vw que incluye la barra de scroll */
-  margin: 0;              /* quitar márgenes negativos que causan overflow */
+  width: 100%;
+  margin: 0;
   min-height: var(--hero-min-height-desktop);
-  overflow: hidden;       /* recortar cualquier exceso */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +22,6 @@
   font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* imagen de fondo: cubrir todo el contenedor sin forzar ancho extra */
 .hero-img-wrap {
   position: absolute;
   inset: 0;
@@ -34,22 +31,20 @@
   user-select: none;
 }
 
-/* img: cubrir el contenedor sin provocar overflow horizontal */
 .hero-img-wrap img.hero-fullimg {
   position: absolute;
   top: 0;
-  left: 0;                /* mantener dentro del contenedor */
-  width: 100%;            /* no usar 100vw */
+  left: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 0%;
+  object-position: 50% 30%;
   display: block;
   pointer-events: none;
   user-select: none;
   max-width: none;
 }
 
-/* contenido encima de la imagen */
 .hero .hero-content {
   position: relative;
   z-index: 2;
@@ -65,7 +60,6 @@
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-/* Títulos y subtítulos */
 .hero-title {
   margin: 0;
   font-weight: 400;
@@ -84,7 +78,6 @@
   font-family: inherit;
 }
 
-/* CTA container */
 .hero-cta {
   display: flex;
   gap: 1rem;
@@ -93,7 +86,6 @@
   justify-content: center;
 }
 
-/* Botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -110,7 +102,6 @@
   font-family: inherit;
 }
 
-/* Llamada primaria */
 .btn-call {
   background: #636B63 !important;
   color: white !important;
@@ -124,7 +115,6 @@
   outline: none;
 }
 
-/* WhatsApp (verde claro) */
 .btn-whatsapp {
   background: #25D366;
   color: white !important;
@@ -133,7 +123,6 @@
   align-items: center;
 }
 
-/* icono dentro del botón */
 .icon-whatsapp {
   width: 1.05rem;
   height: 1.05rem;
@@ -143,13 +132,11 @@
   color: currentColor;
 }
 
-/* texto del botón */
 .btn .btn-text {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* hover / focus WhatsApp */
 .btn-whatsapp:hover,
 .btn-whatsapp:focus {
   transform: translateY(-3px);
@@ -157,7 +144,6 @@
   outline: none;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1200px) {
   .hero { min-height: var(--hero-min-height-desktop); }
   .hero-img-wrap img.hero-fullimg { object-position: 70% 45%; }
@@ -166,16 +152,46 @@
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: var(--hero-min-height-mobile); }
-  .hero-img-wrap img.hero-fullimg { object-position: 55% 50%; }
-  .hero .hero-content { padding: 1rem; gap: 0.75rem; }
-  .hero-title { font-size: clamp(1.6rem, 6.5vw, 2.2rem); }
-  .hero-sub { font-size: 0.95rem; }
-  .hero-cta { gap: 0.6rem; }
-  .btn { min-width: 120px; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.95rem; }
+  .hero {
+    min-height: var(--hero-min-height-mobile);
+    align-items: flex-end;
+    padding-bottom: 3rem;
+  }
+  .hero-img-wrap img.hero-fullimg { object-position: 55% 35%; }
+  .hero .hero-content {
+    padding: 1.5rem 1rem 2rem;
+    gap: 1rem;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    line-height: 1.1;
+  }
+  .hero-sub {
+    font-size: 1rem;
+  }
+  .hero-cta {
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .btn {
+    min-width: 140px;
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    flex: 1 1 auto;
+    max-width: 220px;
+  }
 }
 
-/* accesibilidad: reducir motion */
+@media (max-width: 400px) {
+  .hero {
+    min-height: 85vh;
+  }
+  .hero-title {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn, .hero-title, .hero-sub { transition: none !important; }
 }
