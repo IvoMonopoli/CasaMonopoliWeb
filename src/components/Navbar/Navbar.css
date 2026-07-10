@@ -13,7 +13,9 @@
   --promo-height-tablet: 40px;
   --promo-height-mobile: 36px;
 }
-
+.nav-links-desktop{
+    display:none !important;
+}
 * { box-sizing: border-box; }
 .nav-root {
   font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
