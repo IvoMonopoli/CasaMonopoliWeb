@@ -14,7 +14,10 @@
   --promo-height-mobile: 36px;
 }
 .nav-links-desktop{
-    display:none !important;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    gap:2rem;
 }
 * { box-sizing: border-box; }
 .nav-root {
