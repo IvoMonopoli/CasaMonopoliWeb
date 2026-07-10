@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap');
 
 .site-footer {
-  background: linear-gradient(180deg, #0a9d58 0%, #0b7f52 60%, #063a24 100%);
+ background: linear-gradient(
+180deg,
+#0b7f52 0%,
+#086842 100%
+);
   color: #eafaf0;
-  padding: 3rem 1.5rem 1.5rem;
+  padding:4rem 1.5rem 2rem;
   font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -12,7 +16,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 1fr 0.8fr;
-  gap: 2.5rem;
+  gap: 3rem;
   align-items: start;
 }
 
@@ -23,8 +27,8 @@
 }
 
 .footer-logo {
-  width: 56px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   border-radius: 12px;
   background: rgba(255,255,255,0.08);
   display: flex;
@@ -58,10 +62,22 @@
   font-weight: 600;
   font-size: 0.9rem;
 }
+.brand-description{
 
+    margin-top:.8rem;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:.9rem;
+
+    line-height:1.7;
+
+    max-width:260px;
+
+}
 .footer-col .col-title {
   margin: 0 0 0.9rem 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
   text-transform: uppercase;
@@ -87,9 +103,14 @@
   font-weight: 600;
 }
 
-.footer-col a:hover {
-  color: #ffffff;
-  text-decoration: underline;
+.footer-col a:hover{
+
+    color:#4effa1;
+
+    text-decoration:none;
+
+    transition:.25s;
+
 }
 
 .socials {
@@ -98,20 +119,37 @@
   align-items: center;
 }
 
-.social-btn {
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 1.8rem;
-  transition: transform .15s ease, opacity .15s ease;
-}
+.social-btn{
 
-.social-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.85;
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.3);
+
+    color:white;
+
+    font-size:1.4rem;
+
+    transition:.25s;
+
+}
+.social-btn:hover{
+
+    background:white;
+
+    color:#0b7f52;
+
+    transform:translateY(-4px);
+
 }
 
 .footer-bottom {
@@ -127,7 +165,35 @@
   font-weight: 600;
   font-size: 0.9rem;
 }
+.footer-address{
 
+    margin-top:1.2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.15rem;
+
+}
+
+.footer-address strong{
+
+    color:#ffffff;
+
+    margin-bottom:.3rem;
+
+}
+
+.footer-address span{
+
+    color:#e6f7ef;
+
+    font-weight:600;
+
+    line-height:1.45;
+
+}
 @media (max-width: 1024px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -146,4 +212,13 @@
   .socials {
     justify-content: center;
   }
+  .brand-description{
+
+max-width:100%;
+
+margin:auto;
+
+margin-top:1rem;
+
+}
 }

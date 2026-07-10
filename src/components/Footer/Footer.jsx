@@ -12,29 +12,76 @@ export default function Footer() {
             <img src={logoFooter} alt="CASA MONOPOLI logo" className="footer-logo-img" />
           </div>
           <div className="brand-text">
-            <div className="brand-name">CASA MONOPOLI</div>
-            <div className="brand-tag">Oxigenoterapia Medicinal</div>
-          </div>
+
+  <div className="brand-name">
+    CASA MONOPOLI
+  </div>
+
+  <div className="brand-tag">
+    Oxigenoterapia Medicinal
+  </div>
+
+  <p className="brand-description">
+    Más de 30 años brindando soluciones de oxigenoterapia domiciliaria.
+  </p>
+
+</div>
         </div>
 
-        <div className="footer-col">
-          <h4 className="col-title">ENLACES</h4>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
+              <div className="footer-col">
+        <h4 className="col-title">ENLACES</h4>
 
-        <div className="footer-col">
-          <h4 className="col-title">CONTACTO</h4>
-          <ul className="contact-list">
-            <li>Teléfono: <a href="tel:+541131521097">(011) 3152-1097</a></li>
-            <li>Emergencias: <a href="tel:+541147505285">(011) 4750-5285</a></li>
-            <li>Mail: <a href="mailto:oxigenocasamonopoli@gmail.com">oxigenocasamonopoli@gmail.com</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Equipos</a></li>
+          <li><a href="#por-que-elegirnos">¿Por qué elegirnos?</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+       <div className="footer-col">
+
+  <h4 className="col-title">CONTACTO</h4>
+
+  <ul className="contact-list">
+
+    <li>
+      Teléfono:
+      <a href="tel:+541131521097">
+        (011) 3152-1097
+      </a>
+    </li>
+
+    <li>
+      Teléfono alternativo:
+      <a href="tel:+541147505285">
+        (011) 4750-5285
+      </a>
+    </li>
+
+    <li>
+      Mail:
+      <a href="mailto:oxigenocasamonopoli@gmail.com">
+        oxigenocasamonopoli@gmail.com
+      </a>
+    </li>
+
+    <li className="footer-address">
+
+  <strong>Dirección</strong>
+
+  <span>Asamblea 4180</span>
+
+  <span>Santos Lugares</span>
+
+  <span>Tres de Febrero</span>
+
+</li>
+
+  </ul>
+
+</div>
 
         <div className="footer-col">
           <h4 className="col-title">REDES SOCIALES</h4>
@@ -49,9 +96,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="copyright">© {new Date().getFullYear()} CASA MONOPOLI. Todos los derechos reservados.</div>
-      </div>
+      <div className="copyright">
+  © {new Date().getFullYear()} Casa Monopoli · Desde 1994 acompañando pacientes con oxigenoterapia domiciliaria.
+</div>
     </footer>
   );
 }

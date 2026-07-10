@@ -1,197 +1,163 @@
-/* src/components/Hero/Hero.css
-   Hero corregido para evitar overflow y scroll horizontal no deseado.
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800&display=swap');
-
-:root {
-  --hero-min-height-desktop: 70vh;
-  --hero-min-height-mobile: 78vh;
+:root{
+    --hero-height:75svh;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  min-height: var(--hero-min-height-desktop);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:var(--hero-height);
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#000;
 }
 
-.hero-img-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
+.hero-picture{
+
+    position:absolute;
+
+    inset:0;
 }
 
-.hero-img-wrap img.hero-fullimg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 30%;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-  max-width: none;
+.hero-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transform:scale(1.03);
+
+    display:block;
 }
 
-.hero .hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1120px;
-  padding: 2rem;
-  color: #ffffff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.28),
+        rgba(0,0,0,.38)
+    );
+
+    z-index:1;
 }
 
-.hero-title {
-  margin: 0;
-  font-weight: 400;
-  line-height: 1.02;
-  color: #ffffff;
-  font-size: clamp(2rem, 4.5vw, 3.6rem);
-  letter-spacing: -0.02em;
-  font-family: inherit;
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1100px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    padding:2rem;
 }
 
-.hero-sub {
-  margin: 0;
-  font-weight: 400;
-  color: rgba(255,255,255,0.95);
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  font-family: inherit;
+.hero-title{
+
+    font-size:clamp(2.3rem,5vw,4rem);
+
+    margin-bottom:1rem;
+
+    font-weight:400;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.25rem;
-  flex-wrap: wrap;
-  justify-content: center;
+.hero-sub{
+
+    font-size:clamp(1rem,2vw,1.3rem);
+
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:1.5;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-  box-shadow: 0 6px 18px rgba(11,127,82,0.12);
-  min-width: 140px;
-  font-family: inherit;
+.hero-cta{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+    flex-wrap:wrap;
 }
 
-.btn-call {
-  background: #636B63 !important;
-  color: white !important;
-  border: 0;
+.btn{
+
+    padding:.9rem 1.5rem;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.25s;
 }
 
-.btn-call:hover,
-.btn-call:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(11,127,82,0.18);
-  outline: none;
+.btn:hover{
+
+    transform:translateY(-2px);
 }
 
-.btn-whatsapp {
-  background: #25D366;
-  color: white !important;
-  border: 0;
-  display: inline-flex;
-  align-items: center;
+.btn-call{
+
+    background:#666;
 }
 
-.icon-whatsapp {
-  width: 1.05rem;
-  height: 1.05rem;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.45rem;
-  color: currentColor;
+.btn-whatsapp{
+
+    background:#25D366;
 }
 
-.btn .btn-text {
-  display: inline-block;
-  vertical-align: middle;
-}
+@media(max-width:768px){
 
-.btn-whatsapp:hover,
-.btn-whatsapp:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(37,211,102,0.18);
-  outline: none;
-}
+    .hero{
 
-@media (max-width: 1200px) {
-  .hero { min-height: var(--hero-min-height-desktop); }
-  .hero-img-wrap img.hero-fullimg { object-position: 70% 45%; }
-  .hero .hero-content { padding: 1.5rem; }
-  .btn { min-width: 130px; padding: 0.75rem 1rem; }
-}
+        min-height:100svh;
+    }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: var(--hero-min-height-mobile);
-    align-items: flex-end;
-    padding-bottom: 3rem;
-  }
-  .hero-img-wrap img.hero-fullimg { object-position: 55% 35%; }
-  .hero .hero-content {
-    padding: 1.5rem 1rem 2rem;
-    gap: 1rem;
-  }
-  .hero-title {
-    font-size: clamp(1.8rem, 7vw, 2.4rem);
-    line-height: 1.1;
-  }
-  .hero-sub {
-    font-size: 1rem;
-  }
-  .hero-cta {
-    gap: 0.75rem;
-    width: 100%;
-  }
-  .btn {
-    min-width: 140px;
-    padding: 0.85rem 1.1rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    flex: 1 1 auto;
-    max-width: 220px;
-  }
-}
+    .hero-image{
 
-@media (max-width: 400px) {
-  .hero {
-    min-height: 85vh;
-  }
-  .hero-title {
-    font-size: clamp(1.6rem, 8vw, 2rem);
-  }
-}
+        object-position:68%;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn, .hero-title, .hero-sub { transition: none !important; }
+    .hero-title{
+
+        font-size:2.2rem;
+    }
+
+    .hero-sub{
+
+        font-size:1rem;
+    }
+
 }

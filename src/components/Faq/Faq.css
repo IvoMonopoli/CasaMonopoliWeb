@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+.faq-section{
+
+    background:#f8faf9;
+
+    padding:5rem 1.5rem;
+
+    font-family:"Work Sans",sans-serif;
+
+}
+
+.faq-inner{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.faq-header{
+
+    text-align:center;
+
+    margin-bottom:3rem;
+
+}
+
+.faq-header h2{
+
+    font-size:clamp(2rem,3vw,2.7rem);
+
+    color:#0a9d58;
+
+    font-weight:400;
+
+    margin-bottom:1rem;
+
+}
+
+.faq-header p{
+
+    color:#5d6c66;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.faq-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+.faq-item{
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:0 8px 22px rgba(0,0,0,.05);
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    padding:1.5rem;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    color:#0b7f52;
+
+    text-align:left;
+
+}
+
+.faq-question svg{
+
+    transition:.3s;
+
+}
+
+.rotate{
+
+    transform:rotate(180deg);
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.faq-answer.show{
+
+    max-height:250px;
+
+}
+
+.faq-answer p{
+
+    padding:0 1.5rem 1.5rem;
+
+    margin:0;
+
+    color:#5d6c66;
+
+    line-height:1.7;
+
+}
+
+@media(max-width:700px){
+
+.faq-question{
+
+font-size:1rem;
+
+padding:1.2rem;
+
+}
+
+}
